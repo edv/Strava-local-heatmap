@@ -22,6 +22,7 @@
 import os
 import glob
 import time
+import re
 
 import numpy as np
 import matplotlib.pyplot as plt
@@ -127,10 +128,10 @@ def main(args: Namespace) -> None:
                     if not args.year or l in args.year:
                         for line in file:
                             if '<trkpt' in line:
-                                l = line.split('"')
-
-                                lat_lon_data.append([float(l[1]),
-                                                     float(l[3])])
+                                lon = re.findall(r"lon=\"(-?[0-9]+.?[0-9]*)\"", line)[0]
+                                lat = re.findall(r"lat=\"(-?[0-9]+.?[0-9]*)\"", line)[0]
+                                lat_lon_data.append([float(lat),
+                                                     float(lon)])
 
                     else:
                         break
