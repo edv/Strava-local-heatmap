@@ -11,7 +11,16 @@ Optimized for cycling activities :bicyclist:
 
 ## Usage
 
+### Strava
+
 - Download your GPX files to the `gpx` folder (https://support.strava.com/hc/en-us/articles/216918437-Exporting-your-Data-and-Bulk-Export)
+
+### Apple Health (Apple Watch)
+
+- Open `Health app` on iPhone
+- Tap account icon on the top right
+- Scroll down and press `Export Health Data` (this could take a while)
+- Export the backup to your computer and put all GPX files (found in the `workout-routes` directory) in the `gpx` folder
 
 ### Docker (no local Python dependencies)
 
